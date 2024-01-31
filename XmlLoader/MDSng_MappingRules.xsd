@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="MDSng_IdentifiableBase.xsd"/>
+	<xs:complexType name="MappingConditionType">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="MappingCondition" type="MappingConditionType"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="optional" default="" />
+		<xs:attribute name="boolOp" type="xs:string" use="optional" default="SINGLE" />
+		<xs:attribute name="param" type="xs:string" use="optional" default="" />
+	</xs:complexType>
+  <xs:element name="MappingRules">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="MDSng_IdentifiableBase">
+          <xs:sequence>
+            <xs:element name="MappingRule" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+				  <xs:sequence>
+					  <xs:element name="MappingCondition" type="MappingConditionType" minOccurs="0" maxOccurs="1" />
+				  </xs:sequence>
+                <xs:attribute name="MappingConditionString" type="xs:string" />                
+                <xs:attribute name="sensorlocation" type="xs:string" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

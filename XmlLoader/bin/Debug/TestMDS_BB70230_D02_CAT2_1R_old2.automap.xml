@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MappingRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileVersionID>1.0.0.0</FileVersionID>
+  <MappingRule sensorlocation="ECU-45">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="ECU+45">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="ECUY_lowg">
+    <MappingCondition boolOp="OR">
+      <MappingCondition type="LocationContainsText" param="14BPILBOMILOACY" />
+    </MappingCondition>
+  </MappingRule>
+  <MappingRule sensorlocation="ECUZ_lowg">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="VdsX">
+    <MappingCondition boolOp="OR">
+      <MappingCondition boolOp="AND">
+        <MappingCondition type="LocationEqualsText" param="12SLMBCSLE00ACXP" />
+        <MappingCondition type="LocationDirectionEqualsText" param="X" />
+        <MappingCondition type="SensorLocation" param="UFSL" />
+        <MappingCondition type="MatchMappingComment" />
+      </MappingCondition>
+      <MappingCondition boolOp="AND">
+        <MappingCondition type="SensorLocation" param="UFSL" />
+      </MappingCondition>
+    </MappingCondition>
+  </MappingRule>
+  <MappingRule sensorlocation="RollrateX">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PASFL">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PASFR">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PASML">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PASMR">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PPSFL">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PPSFR">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="UFSL">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="UFSR">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PTSFL">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="PTSFR">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_DIS_X">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_VEL_X">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_ACC_X">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_ACC_Y">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_ACC_Z">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_ANG_X">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+  <MappingRule sensorlocation="REF_RAT_X">
+    <MappingCondition boolOp="OR" />
+  </MappingRule>
+</MappingRules>

@@ -1,0 +1,7 @@
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\bin\Debug\XmlLoader.exe.config
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\bin\Debug\XmlLoader.exe
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\bin\Debug\XmlLoader.pdb
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\obj\Debug\XmlLoader.csproj.AssemblyReference.cache
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\obj\Debug\XmlLoader.csproj.CoreCompileInputs.cache
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\obj\Debug\XmlLoader.exe
+C:\Users\SCM6BP\source\repos\XmlLoader\XmlLoader\obj\Debug\XmlLoader.pdb

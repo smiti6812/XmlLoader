@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MappingRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileVersionID>1.0.0.0</FileVersionID>
+  <MappingRule sensorlocation="ECU-45" />
+  <MappingRule sensorlocation="ECU+45" />
+  <MappingRule sensorlocation="ECUY_lowg" MappingConditionString="((Location.Contains(&quot;14BPILBOMILOACY&quot;)))" />
+  <MappingRule sensorlocation="ECUZ_lowg" />
+  <MappingRule sensorlocation="VdsX" MappingConditionString="(((Location == &quot;12SLMBCSLE00ACXP&quot;) AND (Direction == &quot;X&quot;) AND (SensorLocation == &quot;UFSL&quot;) AND (MappingComment == &quot;&quot;)) OR ((SensorLocation == &quot;UFSL&quot;)))" />
+  <MappingRule sensorlocation="RollrateX" />
+  <MappingRule sensorlocation="PASFL" />
+  <MappingRule sensorlocation="PASFR" />
+  <MappingRule sensorlocation="PASML" />
+  <MappingRule sensorlocation="PASMR" />
+  <MappingRule sensorlocation="PPSFL" />
+  <MappingRule sensorlocation="PPSFR" />
+  <MappingRule sensorlocation="UFSL" />
+  <MappingRule sensorlocation="UFSR" />
+  <MappingRule sensorlocation="PTSFL" />
+  <MappingRule sensorlocation="PTSFR" />
+  <MappingRule sensorlocation="REF_DIS_X" />
+  <MappingRule sensorlocation="REF_VEL_X" />
+  <MappingRule sensorlocation="REF_ACC_X" />
+  <MappingRule sensorlocation="REF_ACC_Y" />
+  <MappingRule sensorlocation="REF_ACC_Z" />
+  <MappingRule sensorlocation="REF_ANG_X" />
+  <MappingRule sensorlocation="REF_RAT_X" />
+</MappingRules>
