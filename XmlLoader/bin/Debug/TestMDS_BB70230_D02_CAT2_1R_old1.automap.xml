@@ -5,7 +5,7 @@
   <MappingRule sensorlocation="ECU+45" />
   <MappingRule sensorlocation="ECUY_lowg" MappingConditionString="((Location.Contains(&quot;14BPILBOMILOACY&quot;)))" />
   <MappingRule sensorlocation="ECUZ_lowg" />
-  <MappingRule sensorlocation="VdsX" MappingConditionString="(((Location == &quot;12SLMBCSLE00ACXP&quot;) AND (Direction == &quot;X&quot;) AND (SensorLocation == &quot;UFSL&quot;) AND (MappingComment == &quot;&quot;)) OR ((SensorLocation == &quot;UFSL&quot;)))" />
+  <MappingRule sensorlocation="VdsX" MappingConditionString="(((Location == &quot;12SLMBCSLE00ACXP&quot;) AND (Direction == &quot;X&quot;) AND (SensorLocation == &quot;UFSL&quot;)) OR ((SensorLocation == &quot;UFSL&quot;) OR (MappingComment == &quot;comment&quot;)))" />
   <MappingRule sensorlocation="RollrateX" />
   <MappingRule sensorlocation="PASFL" />
   <MappingRule sensorlocation="PASFR" />

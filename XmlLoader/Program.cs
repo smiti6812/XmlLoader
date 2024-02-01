@@ -23,24 +23,65 @@ namespace XmlLoader
                 rules = (MappingRules)serializer.Deserialize(xmlReader);
             }           
             var mappingFile = XDocument.Load(@".\TestMDS_BB70230_D02_CAT2_1R_old2.automap.xml");
-            foreach ((XElement mapping, string expression) in from XElement mapping in mappingFile.Descendants("MappingRule")
+            
+            foreach ((XElement mapping, string expression, string expression1) in from XElement mapping in mappingFile.Descendants("MappingRule")
                                                               where mapping.Descendants("MappingCondition").Descendants("MappingCondition").Any()
                                                               let sensorLocation = mapping.FirstAttribute.Value
                                                               let mappingRulesMappingRule = rules.MappingRule.Find(c => c.sensorlocation == sensorLocation)
                                                               let conditions = mappingRulesMappingRule.MappingCondition
                                                               let expression = GenerateExpression(conditions)
-                                                              select (mapping, expression))
+                                                              let expression1 = GenerateExpressionFromXml((XElement)mapping.Element("MappingCondition"))
+                                                              select (mapping, expression, expression1))
             {
-                mapping.Add(new XAttribute("MappingConditionString", expression));                
+                mapping.Add(new XAttribute("MappingConditionString", expression));
+                Console.WriteLine($"{expression}\n{expression1}");
             }
-
+            
             foreach (XElement mapping in mappingFile.Descendants("MappingRule"))
             {
+                
                 mapping.Descendants("MappingCondition").Remove();
             }
 
             mappingFile.Save(@".\TestMDS_BB70230_D02_CAT2_1R_old1.automap.xml");
             Console.ReadLine();
+        }
+
+        public static string GenerateExpressionFromXml(XElement condition)
+        {
+            string boolOp = condition.Attribute("boolOp")?.Value;
+            string boolExpression = "";
+
+            if (boolOp == "AND" || boolOp =="OR")
+            {
+                boolExpression += "(";
+            }
+
+            boolExpression += string.Join($" {boolOp} ", condition.Elements()
+                .Select(e => GenerateExpressionFromXml(e)));
+
+            if (boolOp == "AND" || boolOp == "OR")
+            {
+                boolExpression += ")";
+            }
+
+            string type = condition.Attribute("type")?.Value;
+            string param = condition.Attribute("param")?.Value;
+
+            if (!string.IsNullOrEmpty(type))
+            {
+                boolExpression = type switch
+                {
+                    "SensorLocation" => $"(SensorLocation == \"{param}\")",
+                    "LocationContainsText" => $"(Location.Contains(\"{param}\"))",
+                    "LocationEqualsText" => $"(Location == \"{param}\")",
+                    "LocationDirectionEqualsText" => $"(Direction == \"{param}\")",
+                    "MatchMappingComment" => $"(MappingComment == \"{param}\")",
+                    _ => throw new ArgumentException("Invalid condition type")
+                };                
+            }
+
+            return boolExpression;
         }
         static string GenerateExpression(MappingConditionType condition)
         {

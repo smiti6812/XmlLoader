@@ -20,11 +20,11 @@
       <MappingCondition boolOp="AND">
         <MappingCondition type="LocationEqualsText" param="12SLMBCSLE00ACXP" />
         <MappingCondition type="LocationDirectionEqualsText" param="X" />
-        <MappingCondition type="SensorLocation" param="UFSL" />
-        <MappingCondition type="MatchMappingComment" />
+        <MappingCondition type="SensorLocation" param="UFSL" />        
       </MappingCondition>
-      <MappingCondition boolOp="AND">
+      <MappingCondition boolOp="OR">
         <MappingCondition type="SensorLocation" param="UFSL" />
+		<MappingCondition type="MatchMappingComment" param="comment" />
       </MappingCondition>
     </MappingCondition>
   </MappingRule>
